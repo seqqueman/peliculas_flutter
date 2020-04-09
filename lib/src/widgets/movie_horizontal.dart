@@ -31,10 +31,13 @@ class MovieHorizontal extends StatelessWidget {
 
     return Container(
       height: altura,
-      child: PageView(
+      child: PageView.builder(
         pageSnapping: false,
         controller: _pageController,
-        children: _tarjetas(altura, context),
+        //children: _tarjetas(altura, context),
+        itemCount: peliculas.length,
+        itemBuilder: (context, i) => _tarjeta(context, peliculas[i], altura)
+        
       ),
     );
   }
@@ -64,5 +67,30 @@ class MovieHorizontal extends StatelessWidget {
         ),
       );
     }).toList();
+  }
+
+  Widget _tarjeta(BuildContext context, Pelicula pelicula, double altura){
+    return Container(
+        margin: EdgeInsets.only(right: 3.0),
+        child: Column(
+          children: <Widget>[
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10.0),
+              child: FadeInImage(
+                placeholder: AssetImage('assets/img/no-image.jpg'),
+                image: NetworkImage(pelicula.getPosterimg()),
+                fit: BoxFit.cover,
+                height: altura*0.8,
+              ),
+            ),
+            // SizedBox(height:  5.0),
+            Text(
+              pelicula.title,
+              overflow: TextOverflow.ellipsis,
+              style: Theme.of(context).textTheme.caption,
+            )
+          ],
+        ),
+      );
   }
 }
