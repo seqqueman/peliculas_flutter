@@ -59,6 +59,17 @@ class Pelicula {
     }
     
   }
+
+  getBackgroundimg(){
+    if(posterPath == null){
+        return 'https://clipground.com/images/picture-not-available-clipart-12.jpg';
+    }else{
+        return 'https://image.tmdb.org/t/p/w500/$backdropPath';
+    }
+    
+  }
+
+
 }
 
 class Peliculas{
