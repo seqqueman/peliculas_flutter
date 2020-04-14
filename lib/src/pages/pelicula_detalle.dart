@@ -25,6 +25,7 @@ class PeliculaDetalle extends StatelessWidget {
               _posterTitulo(pelicula, context),
               _descripcion(pelicula),
               _crearCasting(pelicula),
+              SizedBox(height:10.0),
             ]),
           ),
         ],
@@ -60,12 +61,15 @@ class PeliculaDetalle extends StatelessWidget {
     return Container(
       child: Row(
         children: <Widget>[
-          ClipRRect(
-            child: Image(
-              height: 150.0,
-              image: NetworkImage(pelicula.getPosterimg()),
+          Hero(
+            tag: pelicula.id,
+            child: ClipRRect(
+              child: Image(
+                height: 150.0,
+                image: NetworkImage(pelicula.getPosterimg()),
+              ),
+              borderRadius: BorderRadius.circular(20.0),
             ),
-            borderRadius: BorderRadius.circular(20.0),
           ),
           SizedBox(width: 20.0),
           Flexible(
@@ -155,7 +159,10 @@ class PeliculaDetalle extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          Text(actor.name, overflow: TextOverflow.ellipsis,)
+          Text(
+            actor.name,
+            overflow: TextOverflow.ellipsis,
+          )
         ],
       ),
     );
