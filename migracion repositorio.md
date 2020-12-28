@@ -13,8 +13,11 @@ Solo nos centraremos y extenderemos la parte de clonado y limpieza del resposito
 ### Pre-requisitos 📋
 
 _Tener instalado GIT (vamos a usar su git bash)_
+
 _Tener instalado cliente SVN con soporte linea de comandos (Vg: TortoiseSVN)_
+
 _Tener instalado Python (3.7 +)_
+
 _Tener instalado git-filter-repo (es un "addon" escrito en python que el propio GIT te recomienda como sustito a su git filter-branch)_
 
 
