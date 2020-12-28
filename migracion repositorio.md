@@ -4,7 +4,7 @@ _En este documento se intentarán describir una serie de pasos adicionales para 
 
 ## Comenzando 🚀
 
-_Todos los pasos aquí realizados se ejecutan desde una maquina windows.
+_Todos los pasos aquí realizados se ejecutan desde una maquina windows._
 
 Se toma coma base la guía de migración de la CARM **https://github.com/carm-es/guias/blob/master/migracion/Migracion_de_Subversion_a_GitLab.md** .
 Solo nos centraremos y extenderemos la parte de clonado y limpieza del respositorio SVN
@@ -25,7 +25,7 @@ _Tener instalado git-filter-repo (es un "addon" escrito en python que el propio 
 
 _De todo lo anterior el único que puede presentar un escollo en su correcta instalación es git-filter-repo en Windows. Vamos a explicar los pasos_
 
-_Nos aseguramos que tenemos Python en nuestro path (variables de entorno). Suele encontrarse en la ruta
+_Nos aseguramos que tenemos Python en nuestro path (variables de entorno). Suele encontrarse en la ruta_
 
 ```
 C:\Users\Mi_Usuario\AppData\Local\Programs\Python\Python39  (para la version 3.9)
@@ -185,7 +185,7 @@ git filter-repo -f --prune-empty always --subdirectory-filter DexelWeb --refs $b
 git filter-repo -f --prune-empty always --subdirectory-filter DexelWeb --refs master
 ```
 
-_Para el caso de modulo-bo-dexel, los pasos serían similares cambiando un par de cosillas y por supuesto, ejecutando los comandos en la carpeta del clonado que vayamos a destinar a modulo-bo-dexel
+_Para el caso de modulo-bo-dexel, los pasos serían similares cambiando un par de cosillas y por supuesto, ejecutando los comandos en la carpeta del clonado que vayamos a destinar a modulo-bo-dexel_
 
 ```
 git filter-repo -f --prune-empty always --subdirectory-filter modulo-bo-dexel --refs $branch $(git branch -a --list *\/dexel*)
